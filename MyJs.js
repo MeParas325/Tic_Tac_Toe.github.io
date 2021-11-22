@@ -27,7 +27,8 @@ const checkWin = ()=>{
     wins.forEach(e =>{
         if((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !=="")){
             document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won"
-            gameover = true;
+            isgameover = true;
+            document.querySelector('.imgbox').getElementsByTagName("img")[0].style.width = "200px";
         }
     })
 }
@@ -48,4 +49,16 @@ Array.from(boxes).forEach(element=>{
              }
         }
     })
+})
+
+//Add onClick listener to reset the game
+Reset.addEventListener('click', ()=>{
+    let boxtexts = document.querySelectorAll('.boxtext');
+    Array.from(boxtexts).forEach(element =>{
+        element.innerText = " ";
+    });
+    turn = "X";
+    isgameover = false;
+    document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
+    document.querySelector('.imgbox').getElementsByTagName("img")[0].style.width = "0px";
 })
