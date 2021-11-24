@@ -96,4 +96,9 @@ nav ul{
     .gameinfo h1{
         font-size: 1.8rem;
     }
+
+    .container{
+        grid-template-columns: repeat(3, 15vw);
+        grid-template-rows: repeat(3, 15vw);
+    }
 }

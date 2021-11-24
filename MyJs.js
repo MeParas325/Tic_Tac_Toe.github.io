@@ -26,7 +26,7 @@ const checkWin = ()=>{
     ]
     wins.forEach(e =>{
         if((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !=="")){
-            document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won"
+            document.querySelector('.info').innerText = turn + " Won"
             isgameover = true;
             document.querySelector('.imgbox').getElementsByTagName("img")[0].style.width = "200px";
         }
@@ -41,9 +41,9 @@ Array.from(boxes).forEach(element=>{
     element.addEventListener('click', ()=>{
         if(boxtext.innerText === ""){
              boxtext.innerText = turn;
-             turn = changeTurn();
              audioTurn.play();
              checkWin();
+             turn = changeTurn();
              if(!isgameover){
                  document.getElementsByClassName("info")[0].innerText = "Turn for "+ turn;
              }
