@@ -31,6 +31,7 @@ nav ul{
    grid-template-rows: repeat(3, 10vw);
    grid-template-columns: repeat(3, 10vw);
    font-family: 'Roboto', sans-serif;
+   position: relative;
 }
 
 .box{
@@ -78,6 +79,14 @@ nav ul{
     border-radius: 5px;
 }
 
+.line{
+    position: absolute;
+    width: 0vw;
+    height: 3px;
+    background-color: black; 
+    transition: width 1s ease-in-out;
+    /* transform: rotate(90deg); */
+}
 .btn:hover{
     cursor: pointer;
     background-color: rgb(79, 79, 231);
