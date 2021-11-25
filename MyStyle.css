@@ -110,4 +110,8 @@ nav ul{
         grid-template-columns: repeat(3, 15vw);
         grid-template-rows: repeat(3, 15vw);
     }
+
+    .line{
+        display: none;
+    }
 }
